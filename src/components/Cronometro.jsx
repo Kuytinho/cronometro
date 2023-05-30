@@ -38,7 +38,7 @@ function Cronometro() {
 
   return (
     <div>
-      <p>Tempo decorrido:{hours} horas, {minutes} minutos e {seconds} segundos</p>
+      <p>Tempo decorrido: {hours} {hours === 1 ? "Hora" : "Horas"}, {minutes} {minutes === 1 ? "Minuto" : "Minutos"} e {seconds} segundos</p>
       <button onClick={toggleActive}>
         {isActive ? 'Parar' : 'Iniciar'}
       </button>
