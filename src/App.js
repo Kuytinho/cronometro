@@ -1,6 +1,7 @@
 import './App.css';
 import Header from './components/Header';
 import Cronometro from './components/Cronometro';
+import React, { useState } from 'react';
 
 function App() {
   const [isDarkMode, setIsDarkMode] = useState(false);
