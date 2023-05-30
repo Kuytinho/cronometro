@@ -1,16 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import Header from './components/Header';
+import Missions from './components/Missions';
+import SolarSystem from './components/SolarSystem';
+import './App.css'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>Choo Choo! This is an example of a create-react-app site running on Railway.</p>
-        <a className="App-link" href="https://react.dev/learn" target="_blank" rel="noreferrer noopener">Learn React</a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+  render() {
+    return (
+      <div>
+        <Header />
+        <SolarSystem />
+        <Missions />
+      </div>
+    );
+  }
 }
 
 export default App;
