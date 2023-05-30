@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 
 function Cronometro() {
+  const [hours, setHours] = useState(0);
+  const [minutes, setMinutes] = useState(0);
   const [seconds, setSeconds] = useState(0);
   const [isActive, setIsActive] = useState(false)
 
@@ -8,6 +10,14 @@ function Cronometro() {
     const interval = setInterval(() => {
       if (isActive) {
         setSeconds(seconds => seconds + 1)
+      };
+      if (seconds === 60) {
+        setSeconds(0);
+        setMinutes(minutes => minutes + 1)
+      };
+      if (minutes === 60) {
+        setMinutes(0);
+        setHours(hours => hours + 1)
       };
     }, 1000);
 
@@ -20,14 +30,15 @@ function Cronometro() {
 
   const reset = () => {
     setIsActive(false);
-    setSeconds(0)
+    setSeconds(0);
+    setMinutes(0);
+    setHours(0);
   }
   
 
   return (
     <div>
-      <h1>Cronômetro</h1>
-      <p>Tempo decorrido: {seconds} segundos</p>
+      <p>Tempo decorrido:{hours} horas, {minutes} minutos e {seconds} segundos</p>
       <button onClick={toggleActive}>
         {isActive ? 'Parar' : 'Iniciar'}
       </button>
