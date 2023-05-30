@@ -22,7 +22,7 @@ function Cronometro() {
     }, 1000);
 
     return () => clearInterval(interval);
-  }, [isActive]);
+  }, [isActive, minutes, seconds]);
 
   const toggleActive = () => {
     setIsActive(!isActive);
