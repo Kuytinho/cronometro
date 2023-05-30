@@ -12,11 +12,11 @@ function Cronometro() {
         setSeconds(seconds => seconds + 1)
       };
       if (seconds === 60) {
-        setSeconds(0);
+        setSeconds(1);
         setMinutes(minutes => minutes + 1)
       };
       if (minutes === 60) {
-        setMinutes(0);
+        setMinutes(1);
         setHours(hours => hours + 1)
       };
     }, 1000);
@@ -37,7 +37,7 @@ function Cronometro() {
   
 
   return (
-    <div>
+    <div className="container">
       <p>Tempo decorrido: {hours} {hours === 1 ? "Hora" : "Horas"}, {minutes} {minutes === 1 ? "Minuto" : "Minutos"} e {seconds} segundos</p>
       <button onClick={toggleActive}>
         {isActive ? 'Parar' : 'Iniciar'}
