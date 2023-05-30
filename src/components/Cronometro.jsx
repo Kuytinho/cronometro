@@ -17,6 +17,11 @@ function Cronometro() {
   const toggleActive = () => {
     setIsActive(!isActive);
   };
+
+  const reset = () => {
+    setIsActive(false);
+    setSeconds(0)
+  }
   
 
   return (
@@ -25,6 +30,9 @@ function Cronometro() {
       <p>Tempo decorrido: {seconds} segundos</p>
       <button onClick={toggleActive}>
         {isActive ? 'Parar' : 'Iniciar'}
+      </button>
+      <button onClick={reset}>
+        Resetar
       </button>
 
     </div>
