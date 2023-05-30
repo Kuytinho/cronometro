@@ -6,6 +6,7 @@ function Cronometro() {
   const [seconds, setSeconds] = useState(0);
   const [isActive, setIsActive] = useState(false)
 
+
   useEffect(() => {
     const interval = setInterval(() => {
       if (isActive) {
