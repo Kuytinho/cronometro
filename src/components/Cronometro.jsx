@@ -2,19 +2,31 @@ import React, { useState, useEffect } from 'react';
 
 function Cronometro() {
   const [seconds, setSeconds] = useState(0);
+  const [isActive, setIsActive] = useState(false)
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setSeconds(seconds => seconds + 1);
+      if (isActive) {
+        setSeconds(seconds => seconds + 1)
+      };
     }, 1000);
 
     return () => clearInterval(interval);
-  }, []);
+  }, [isActive]);
+
+  const toggleActive = () => {
+    setIsActive(!isActive);
+  };
+  
 
   return (
     <div>
       <h1>Cronômetro</h1>
       <p>Tempo decorrido: {seconds} segundos</p>
+      <button onClick={toggleActive}>
+        {isActive ? 'Parar' : 'Iniciar'}
+      </button>
+
     </div>
   );
 }

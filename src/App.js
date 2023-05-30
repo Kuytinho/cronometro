@@ -1,6 +1,6 @@
 import './App.css';
 import Header from './components/Header';
-import Cronometro from './components/Cronometro';
+  import Cronometro from './components/Cronometro';
 
 function App() {
   return (
